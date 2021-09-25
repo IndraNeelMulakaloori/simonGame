@@ -1,3 +1,9 @@
+alert("Welcome to Simon Game");
+alert("HOW TO PLAY...");
+alert("The computer flashes a button . You need to start the game by pressing the same button");
+alert("Next,the computer flashes another button. You need to press the previous buttons and the recent buttons.In this way, you need to press all the buttons in the sequence which were flashed.");
+alert("If you press the wrong button,you lose the game.");
+
 /**
  * a function which returns whether the supports touch or not;
  * @returns {boolean} 
