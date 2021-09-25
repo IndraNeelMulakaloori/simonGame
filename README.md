@@ -2,7 +2,7 @@
 
 > This web-game is created based on the **Simon game.**
 This project is one of the assignments in **Angela YU WEBDEV** course.
----
+
 
 ## How to Play
 
@@ -22,7 +22,7 @@ This project is one of the assignments in **Angela YU WEBDEV** course.
 ![wrong-gameplay-gif](pictures/wrong.gif)
 7. The **User** can restart the game.
 
---- 
+
 ## Languages and Libraries :
 - HTML
 - CSS
