@@ -5,7 +5,7 @@ alert("Next,the computer flashes another button. You need to press the previous 
 alert("If you press the wrong button,you lose the game.");
 
 /**
- * a function which returns whether the supports touch or not;
+ * a function which returns boolean value for touch-supported devices.
  * @returns {boolean} 
  */
 function isTouchDevice(){
@@ -49,9 +49,15 @@ function nextSequence() {
  */
 function gameStart() {
     if(isTouch)
-    eventPassed = "touches";
+    {
+    eventPassed = "touchend";
+    $("#level-title").text("Press outside the buttons to start");
+    }
     else 
+    {
     eventPassed = "keydown";
+    $("#level-title").text("Press a key to start");
+    }
     $(document).on(eventPassed, function () {
         if (!started) {
             level += 1;
@@ -68,7 +74,7 @@ function gameStart() {
  * User clicked buttons are stored in userClickedPattern array and the recently clicked button is passed into checkAnswer function
  */
 if(isTouch)
-eventPassed = "touches";
+eventPassed = "touchend";
 else 
 eventPassed = "click";
 $(".btn").on(eventPassed, function () {
@@ -107,14 +113,15 @@ function checkAnswer(currentLevel) {
     } else {
         console.log("wrong");
         playSound("wrong");
-        $("#level-title").text("Game Over, Press any key to restart");
+        $("#level-title").text("Game Over, please Wait to restart...");
         $("body").addClass("game-over");
-
-
         setTimeout(function () {
             $("body").removeClass("game-over");
         }, 200);
-        startOver();
+        setTimeout(function(){
+            startOver();
+        },3000);
+        
     }
 
 
